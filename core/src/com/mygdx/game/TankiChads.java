@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class TankiChads extends Game {
 	SpriteBatch batch;
-	BitmapFont font;
 	
 	@Override
 	public void create () {

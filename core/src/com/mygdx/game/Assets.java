@@ -13,6 +13,7 @@ public class Assets {
     public static Texture background;
     public static Texture Blank_background;
     public static Texture Logo;
+    public static ArrayList<Texture> tanks;
     public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"´`'<>";
     public static BitmapFont font;
     public static Texture load_Game;
@@ -21,6 +22,7 @@ public class Assets {
     public static Texture settings_Game;
     public static Texture back;
     public static Texture select_Game_Mode_SpriteSheet;
+    public static Texture select_tank;
     public static ArrayList<TextureRegion> select_Game_Modes = new ArrayList<TextureRegion>();
 
     public static Skin uiSkin;
@@ -50,6 +52,16 @@ public class Assets {
         select_Game_Modes.add(new TextureRegion(select_Game_Mode_SpriteSheet, 932, 16, 689, 720));
         select_Game_Modes.add(new TextureRegion(select_Game_Mode_SpriteSheet, 1840, 32, 689, 785));
         back = new Texture(Gdx.files.internal("back.png"));
+        back.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        tanks = new ArrayList<Texture>();
+        tanks.add(new Texture(Gdx.files.internal("green.png")));
+        tanks.add(new Texture(Gdx.files.internal("orange.png")));
+        tanks.add(new Texture(Gdx.files.internal("blue.png")));
+        tanks.add(new Texture(Gdx.files.internal("chad_tank.png")));
+        for(Texture tank : tanks){
+            tank.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        }
+        select_tank = new Texture(Gdx.files.internal("Select_Tank.png"));
     }
 
 }
