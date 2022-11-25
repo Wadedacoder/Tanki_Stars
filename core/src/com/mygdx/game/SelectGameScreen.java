@@ -56,7 +56,7 @@ public class SelectGameScreen extends ScreenAdapter {
         gameMode.get(2).addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new TankSelectScreen((TankiChads) Gdx.app.getApplicationListener(),2));
+                ((Game)Gdx.app.getApplicationListener()).setScreen(new InProgressScreen((TankiChads) Gdx.app.getApplicationListener()));
             }
         });
         back = new ImageButton(new TextureRegionDrawable(Assets.back));

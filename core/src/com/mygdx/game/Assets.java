@@ -12,6 +12,9 @@ import java.util.ArrayList;
 public class Assets {
     public static Texture background;
     public static Texture Blank_background;
+    public static Texture load_background;
+    public static Texture inprogress_background;
+    public static Texture setting_background;
     public static Texture Logo;
     public static ArrayList<Texture> tanks;
     public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"´`'<>";
@@ -25,11 +28,15 @@ public class Assets {
     public static Texture select_tank;
     public static ArrayList<TextureRegion> select_Game_Modes = new ArrayList<TextureRegion>();
 
+
     public static Skin uiSkin;
 
     public static void load() {
         background = new Texture(Gdx.files.internal("background.png"));
         Blank_background = new Texture(Gdx.files.internal("Tank_BackGround.png"));
+        load_background = new Texture(Gdx.files.internal("load_background.png"));
+        inprogress_background = new Texture(Gdx.files.internal("inprogress.png"));
+        setting_background = new Texture(Gdx.files.internal("Setting.png"));
         Logo = new Texture(Gdx.files.internal("logo.png"));
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("wpa-gothic.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
