@@ -56,7 +56,7 @@ public class TankSelectScreen extends ScreenAdapter {
         stage.act();
         game.batch.begin();
         game.batch.draw(Assets.Blank_background, 0, -1);
-        game.batch.draw(Assets.select_tank, 0, 0);
+        game.batch.draw(Assets.select_tank, Gdx.graphics.getWidth() / 2 - Assets.select_tank.getWidth() / 2, Gdx.graphics.getHeight()  - Assets.select_tank.getHeight(), Assets.select_tank.getWidth(), Assets.select_tank.getHeight());
         game.batch.end();
         stage.draw();
     }

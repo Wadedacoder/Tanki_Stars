@@ -49,7 +49,7 @@ public class MainMenu extends ScreenAdapter {
         load_button.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new SelectGameScreen((TankiChads) Gdx.app.getApplicationListener()));
+                ((Game)Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen((TankiChads) Gdx.app.getApplicationListener()));
             }
 
         });
@@ -79,12 +79,12 @@ public class MainMenu extends ScreenAdapter {
         ImageButton.ImageButtonStyle style3 = new ImageButton.ImageButtonStyle();
         style3.up = new TextureRegionDrawable(Assets.settings_Game);
         settings_button = new ImageButton(style3);
-//        settings_button.addListener(new ClickListener(){
-//            @Override
-//            public void clicked(InputEvent event, float x, float y){
-//                ((Game)Gdx.app.getApplicationListener()).setScreen(new SettingsScreen((TankiChads) Gdx.app.getApplicationListener()));
-//            }
-//        });
+        settings_button.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y){
+                ((Game)Gdx.app.getApplicationListener()).setScreen(new Settings((TankiChads) Gdx.app.getApplicationListener()));
+            }
+        });
         settings_button.setPosition(10, Gdx.graphics.getHeight() - 30);
         settings_button.setSize(20, 20);
 
