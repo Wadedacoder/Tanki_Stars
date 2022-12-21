@@ -19,7 +19,7 @@ public class TankSelectScreen extends ScreenAdapter {
     private Stage stage;
 
 
-    TankSelectScreen(TankiChads game, int gameMode) {
+    TankSelectScreen(TankiChads game, int gameMode, final int tank1, int tank2) {
         this.game = game;
         this.gameMode = gameMode;
         stage = new Stage();
@@ -29,10 +29,19 @@ public class TankSelectScreen extends ScreenAdapter {
             ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
             style.up = new TextureRegionDrawable(Assets.tanks.get(i));
             tanks.add(new ImageButton(style));
+            final int finalI = i;
             tanks.get((i)).addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen((TankiChads) Gdx.app.getApplicationListener()));
+                    if(tank1 <= 0){
+                        Game game = (Game) Gdx.app.getApplicationListener();
+                        System.out.println("Tank 1: " + finalI);
+                        ((Game) Gdx.app.getApplicationListener()).setScreen(new TankSelectScreen((TankiChads) game, 0,  finalI, -1));
+                    } else {
+                        System.out.println("Tank 2: " + finalI);
+//                        ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen((TankiChads) Gdx.app.getApplicationListener(), gameMode, tank1, finalI));
+                        ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen((TankiChads) Gdx.app.getApplicationListener(), tank1, finalI));
+                    }
                 }
             });
         }
@@ -50,6 +59,13 @@ public class TankSelectScreen extends ScreenAdapter {
         }
 
         Gdx.input.setInputProcessor(stage);
+    }
+
+    public TankSelectScreen(TankiChads game, int gameMode) {
+        this(game, gameMode, -1, -1);
+    }
+    public TankSelectScreen(TankiChads game, int gameMode, int tank1) {
+        this(game, gameMode, tank1, -1);
     }
     @Override
     public void render(float delta) {

@@ -38,6 +38,8 @@ public class MainMenu extends ScreenAdapter {
         play_button.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
+                System.out.println("Play button clicked");
+//                ((Game)Gdx.app.getApplicationListener()).setScreen(new SelectGameScreen((TankiChads) Gdx.app.getApplicationListener()));
                 ((Game)Gdx.app.getApplicationListener()).setScreen(new SelectGameScreen((TankiChads) Gdx.app.getApplicationListener()));
             }
         });
